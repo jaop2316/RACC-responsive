@@ -1,0 +1,1061 @@
+@import "susy";
+@import "breakpoint";
+@import "_colors.scss";
+@import "_reset.scss";
+@import "_mixins.scss";
+
+$min-width: 400px 600px;
+$max-width: 600px;
+$susy: (
+  columns: 12,
+  container: 1600px,
+  gutters: 1/2,
+  math: fluid,
+  gutter-position: outside,
+);
+
+body { 
+@include container; 
+@include breakpoint($min-width){
+  @include container($max-width);
+}
+}
+
+header{
+width:1600px;
+height: 1238px;
+background-image:linear-gradient($gradient-color, $gradient-color),url("img/header.jpg");
+background-size: cover;
+background-position: center;
+@include breakpoint($min-width){
+   @include span(12);
+      height: 400px;
+      background-position: center;
+}
+}
+
+.row {
+    @include row(1600) ;
+    @include breakpoint($min-width){
+      @include span(12);
+    }
+  }
+
+  .col-4{
+    @include col(33.33);
+    @include breakpoint($min-width){
+      @include span(12);
+    }
+  }
+
+  .col-5 {
+    @include col(41.66);
+  }
+
+  .col-6 {
+   @include col(50);
+   @include breakpoint($min-width){
+      display:none;
+    }
+  }
+
+  .head {
+   background-color:$head-color;
+   width:1600px;
+    &::after{
+      content: "";
+      clear: both;
+      display: table;
+    }
+    @include breakpoint($min-width){
+     @include span(12);
+      }
+}
+
+.div-logo{
+    float:left;
+    width: 25%;
+    padding-top:6px;
+    @include breakpoint($min-width){
+      img{
+        @include span(12);
+      }
+    }
+}
+
+  .div-navs{
+    float:left;
+    width: 75%;
+    @include breakpoint($min-width){
+   display:none;
+}
+}
+
+.div-navs2{
+    float:right;
+        @include breakpoint($min-width){
+       @include span(9);
+    }
+}
+
+  .main-navbar{
+    float:right;
+    list-style:none;
+    background-color:$red-racc;
+    li{
+      display: inline-block;
+      text-decoration: none;
+      padding-top:1px;
+      padding-left:40px;
+      padding-right:86px;
+      &:hover{
+        text-decoration:underline;
+      }
+    }
+    a{
+      color:$white;
+      text-decoration:none;
+      font-family:'Raleway';
+      font-size:12px;
+      letter-spacing:2px;
+      font-weight: 500;
+      line-height: 48px;
+      text-align: left;
+    }
+    @include breakpoint($min-width){
+      display:none;
+    }
+  
+}
+
+
+
+  .secondary-navbar{
+    list-style:none;
+    li{
+      display: inline-block;
+      margin-right:105px;
+      margin-top:4px;
+      text-decoration: none;
+      &:hover{
+        background-color: white;
+      }
+      &.icon{
+          display: none;
+      }
+      &.search-icon{
+        display:none;
+      }
+    }
+    a{
+      text-decoration:none;
+      font-family: 'Raleway';
+      color:$black;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 48px;
+      text-align: left;
+    }
+      @include breakpoint($min-width){
+      li:not(:first-child){
+        display:none;
+        &.icon{
+        float: right;
+        display: inline-block;
+      }
+      }
+    }
+    @include breakpoint($min-width){
+      &.responsive{
+        li{
+          float: none;
+          display: inline;
+          &.icon{
+            position: absolute;
+               right: 0;
+               top: 0;
+          }
+          a{
+            display: block;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  .slide-box{
+    @include absolute-text(400,485,175);
+    h1{
+      color:$white;
+      margin:0;
+      font-family: 'Raleway';
+      font-size: 45px;
+      font-weight: 300;
+      line-height: 48px;
+      text-align: left;
+      font-style: normal;
+    }
+    @include breakpoint($min-width){
+      @include absolute-text(220,265,40);
+      h1{
+        color:white;
+        margin:0;
+        font-family: 'Raleway';
+        font-size: 30px;
+        font-weight: 150;
+        line-height: 24px;
+      text-align: left;
+      font-style: normal;
+      }
+
+    }
+  }
+
+  .slide-box2{
+    @include absolute-text(375,613,172);
+    h2{
+      color:white;
+      font-size:15px;
+      font-family: 'Open Sans';
+      font-weight: 400;
+      line-height: 23px;
+      text-align: left;
+    }
+    @include breakpoint($min-width){
+      display:none;
+    }
+  }
+
+   .young_photo{
+    margin-top:745px;
+    margin-left:790px;
+    @include breakpoint($min-width){
+      display:none;
+    }
+  }
+
+  .student_box{
+    @include apply-box(365,194,#87888e,70,-388,425);
+    @include breakpoint($min-width){
+      @include span(12);
+      height:97px;
+      margin-top:0px;
+      padding-top:50px;
+      p{
+        color:#fff;
+        font-family: 'Raleway';
+        font-size:25px;
+        text-align: center;
+        font-weight: 400;
+        line-height: 10px;
+      }
+    }
+
+  }
+
+  .student_boxsecond{
+    @include apply-box(365,194,#999ba1,70,-194,425);
+    @include breakpoint($min-width){
+      @include span(12);
+      height:97px;
+      margin-top:348px;
+      padding-top:50px;
+      p{
+        color:#fff;
+        font-family: 'Raleway';
+        font-size:25px;
+        text-align: center;
+        font-weight: 400;
+        line-height: 10px;
+      }
+    }
+  }
+
+  .boxes {
+    width: 50%;
+    float: left;
+    padding-left: 425px; 
+    @include breakpoint($min-width){
+      @include span(12);
+      margin-top:194px;
+      margin-left:0px;
+      padding-left:0px;
+    }
+  }
+
+  .student_boxthird{
+    @include apply-box2(365,194,#bbbbbf,70);
+    @include breakpoint($min-width){
+      @include span(12);
+      height:97px;
+      padding-top:50px;
+      p{
+        color:#fff;
+        font-family: 'Raleway';
+        font-size:25px;
+        text-align: center;
+        font-weight: 400;
+        line-height: 10px;
+      }
+    }
+  }
+
+  .student_boxfourth{
+    @include apply-box2(365,194,#cfcfd2,70);
+     @include breakpoint($min-width){
+      @include span(12);
+      height:97px;
+      padding-top:50px;
+      p{
+        color:#fff;
+        font-family: 'Raleway';
+        font-size:25px;
+        text-align: center;
+        font-weight: 400;
+        line-height: 10px;
+      }
+    }
+  }
+
+  .apply1{
+    width: 58.33%;
+    float: left;
+  }
+
+  .text-apply1C{
+    @include options-apply(61,30,230)
+  }
+
+  .text-apply2C{
+    @include options-apply(60,39,230);
+  }
+
+  .online-applies{
+    width: 50%;
+    float: left;
+    padding-top:48px;
+    padding-left:25px;
+    p{
+      font-family: Open Sans;
+      color:  $red-racc;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 40px;
+      text-align: left;
+    }
+    @include a-hover-putcolor($red-racc);
+  
+ }
+
+ .apply2Container{
+  padding-top:50.5px;
+  padding-left:54px;
+  width:279px;
+  height:200px;
+   p{
+     font-family: 'Open Sans';
+    color:  #010102;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+   }
+ }
+
+
+  .section-news{
+    h1{
+      padding-top:47px;
+      padding-left:40px;
+      padding-bottom:30px;
+      font-family: Raleway;
+      color:  #394d69;
+      font-size: 35px;
+    }
+    @include breakpoint($min-width){
+      h1{
+      padding-top:70px;
+      padding-left:40px;
+      padding-bottom:40px;
+      font-family: Raleway;
+      color:  #394d69;
+      font-size: 25px;
+      }
+    }
+   
+  }
+
+
+  .news-section1{
+    @include custom_col(50);
+    img{
+      padding-top:0px;
+    }
+    @include breakpoint($min-width){
+      @include span(12);
+    }
+  }
+
+  .news1-image{
+    @include custom_col(51.4);
+    padding-left:37px;
+    @include breakpoint($min-width){
+      @include span(12);
+      padding-left: 15px;
+    }
+  }
+
+  .news-section2{
+    @include custom_col(47.5);
+    background-color:#87888e;
+    height: 352px;
+    h1{
+      @include section-text(Open Sans,$white,24,400,22.48,left,21,25.5);
+    }
+    h2{
+      @include section-text(Raleway,$white,36,300,70,left,43,25.5);
+    }
+    p{
+      @include section-text(Open Sans,$white,16,400,30,justify,0,25.5);
+      padding-right:40px;
+    }
+    @include breakpoint($min-width){
+      @include span(12);
+      margin-left: 15px;
+      height: 176px;
+      width:371px;
+      h1{
+        @include section-text(Open Sans,$white,24,400,22.48,left,21,25.5);
+        padding-bottom:4px;
+      }
+      h2{
+        display:none;
+      }
+      p{
+        @include section-text(Open Sans,$white,12,400,30,justify,0,25.5);
+      }
+    }
+  }
+
+  .news-section3{
+    @include col-background-image(22.5,left,"news2.png",351,13);
+    p{
+      @include section-text(Open Sans,$white,22,600,28,left,276,15);
+    }
+    @include breakpoint($min-width){
+      @include span(12);
+      background-repeat: no-repeat;
+      margin-top:35px;
+      background-position: center;
+    }
+  }
+
+  .news-section4{
+    @include col-background-image(22.5,left,"news3.png",351,20);
+    p{
+      @include section-text(Open Sans,$white,22,600,28,left,276,15);
+    }
+    @include breakpoint($min-width){
+      @include span(12);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top:15px;
+    }
+  }
+
+  /* Sección Eventos*/
+
+ .section-events{
+   padding-top:31.5px;
+   padding-bottom:50px;
+   h1{
+     padding-left:37px;
+     font-family: Raleway;
+     color:  #394d69;
+     font-size: 35px;
+   }
+   @include breakpoint($min-width){
+      @include span(12);
+   }
+   h1{
+     padding-left:20px;
+     font-family: Raleway;
+     color:  #394d69;
+     font-size: 25px;
+   }
+ }
+
+ .event1{
+   @include custom_col(38);
+   padding-left:92px;
+   padding-top:60px;
+   p{
+     @include section-text(Open Sans,#363636,49.21,700,22,left,19,15);
+   }
+   @include breakpoint($min-width){
+      @include span(4);
+      padding-left:20px;
+   }
+ }
+
+ .red-rectangle{
+   background-color:$red-racc;
+   width:90px;
+   height:33px;
+   p{
+    @include section-text(Raleway,#f3f3f3,28.71,700,22,center,5,0);
+   }
+   @include breakpoint($min-width){
+      p{
+        @include section-text(Raleway,#f3f3f3,15,700,22,center,5,0);
+      }
+   }
+
+ }
+
+ .event1-info{
+   @include custom_col(50);
+   padding-top:70px;
+   @include a-hover-putcolor($black);
+   p{
+     @include section-text(Open Sans,#363636,22,600,30,left,0,0);
+   }
+   @include breakpoint($min-width){
+      @include span(6);
+      p{
+     @include section-text(Open Sans,#363636,15,600,30,left,0,0);
+   }
+   }
+ }
+
+
+  .section-social{
+    padding-top:30px;
+  }
+
+ .socialbox1{
+   @include color_col(25,$red-racc,399);
+   p{
+     @include section-text(Raleway,#eeeeef,47.99,400,45,left,45,35) ;
+   }
+   @include breakpoint($min-width){
+      @include span(12);
+
+   }
+ }
+
+ .rowConnect{
+   @include row(400);
+ }
+
+ .facemini-col{
+   @include col-icons-connect(16.66,left,200,37);
+ }
+
+ .iconmini-col{
+   @include col-icons-connect(16.66,left,200,20);
+ }
+
+ .socialbox2{
+   @include col-background-image(25,left,"social1.png",399,0);
+   @include breakpoint($min-width){
+      @include span(12);
+      background-repeat: no-repeat;
+   }
+ }
+
+ .instaIconContainer{
+   @include col-icons-connect(16.66,left,352,45);
+ }
+
+ .instaUserContainer{
+   @include col-icons-connect(16.66,left,355,40);
+     @include a-hover-putcolor($white);
+     p{
+       @include section-text(Open Sans,#eeeeef,14,700,20,center,0,0);
+     }
+ }
+
+ .socialbox3{
+   @include color_col(25,$twitter-box-connect,399);
+   @include breakpoint($min-width){
+      @include span(12);
+   }
+ }
+
+ .advice-container{
+   @include box-paragraph(320,200,30,165);
+   @include a-hover-putcolor($red-racc);
+   p{
+     @include section-text(Open Sans,$advice-text,16,400,20,left,0,0);
+   }
+ }
+
+ .twitterIconContainer{
+   @include col-icons-connect(16.66,left,-10,37);
+ }
+ .twitterUserContainer{
+   @include col-icons-connect(16.66,left,-9,54);
+   @include a-hover-putcolor($red-racc);
+   p{
+     @include section-text(Open Sans,$red-racc,14,700,20,center,0,0);
+   }
+ }
+
+ .socialbox4{
+   @include col-background-image(25,left,"social2.png",399,0);
+   @include breakpoint($min-width){
+      @include span(12);
+      background-repeat: no-repeat;
+   }
+ }
+
+ .socialbox5{
+   @include col-background-image(25,left,"social3.jpg",399,0);
+   @include breakpoint($min-width){
+      @include span(12);
+      background-repeat: no-repeat;
+   }
+ }
+
+ .socialbox7{
+   @include col-background-image(25,left,"social4.png",399,0);
+   @include breakpoint($min-width){
+      @include span(12);
+      background-repeat: no-repeat;
+   }
+ }
+
+ .contact-form{
+  @include custom-float(75,right);
+  background-color:$contact-section;
+  width: 1391px;
+  height: 258px;
+  p{
+    @include section-text(Raleway,$white,35,500,39,left,50,50);
+  }
+  @include breakpoint($min-width){
+      @include span(12);
+      p{
+        @include section-text(Raleway,$white,25,500,39,left,30,30);
+      }
+   }
+}
+
+.inputs{
+  padding-top:30px;
+  padding-left:42px;
+  @include breakpoint($min-width){
+      @include span(12);
+   }
+}
+
+.rowContact{
+  @include row(1343);
+  @include breakpoint($min-width){
+      @include span(12);
+   }
+}
+
+.name-col{
+  @include col(15);
+  @include breakpoint($min-width){
+      @include span(3);
+
+   }
+}
+
+.phone-col{
+  @include col(25);
+  margin-left:5px;
+  @include breakpoint($min-width){
+      @include span(2);
+      margin-left:75px;
+   }
+}
+
+.email-col{
+  @include col(22.5);
+  margin-left:-133px;
+  @include breakpoint($min-width){
+      @include span(2);
+      margin-top:40px;
+      margin-left:-209px;
+   }
+}
+
+.button-col{
+  @include col(12);
+  @include breakpoint($min-width){
+      @include span(2);
+      margin-top:40px;
+      margin-left:-50px;
+   }
+}
+
+.txt-name{
+  @include inputs(5,$white,194,60,Montserrat,$input-color,
+  12,12,10);
+  @include breakpoint($min-width){
+      @include inputs(2,$white,150,30,Montserrat,$input-color,
+  12,12,2);
+   }
+}
+
+.txt-email{
+  @include inputs(5,$white,294,60,Montserrat,$input-color,
+  12,12,10);
+   @include breakpoint($min-width){
+      @include inputs(2,$white,150,30,Montserrat,$input-color,
+  12,12,2);
+   }
+}
+
+%btn-text{
+  font-family: Montserrat;
+  color:  #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: center;
+}
+
+.btn-send{
+  @include buttons(5,solid,2,$white,$btn-send-background,156,60);
+  @extend %btn-text;
+  &:hover{
+    background-color:$white;
+    color:$black;
+  }
+  @include breakpoint($min-width){
+    @include buttons(1,solid,2,$white,$btn-send-background,150,33);
+   }
+}
+
+.call-col{
+  @include col(35);
+  padding-top:20px;
+  padding-left:25px;
+  p{
+    @include section-text(Raleway,$white,30,500,23,left,0,0);
+  }
+  @include breakpoint($min-width){
+      @include span(9);
+      margin-top:80px;
+      margin-left:-235px;
+      p{
+    @include section-text(Raleway,$white,20,500,23,left,0,0);
+  }
+   }
+}
+
+.long-raac{
+  @include col-background-image(100,left,"raac2.png",742,0);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  @include breakpoint($min-width){
+    @include span(12);
+    height:200px;
+  }
+}
+
+.about-raac{
+  @include col-icons-connect(27.5,left,455.5,0);
+  background-color:  #f23522;
+  p{
+    @include section-text(Raleway,$white,35,300,39,left,121,35);
+  }
+  @include breakpoint($min-width){
+    @include span(12);
+    height:400px;
+    margin-top:200px;
+    p{
+      @include section-text(Raleway,$white,20,300,39,left,30,35);
+    }
+  }
+}
+
+.textabout-container{
+  @include box-paragraph-paddings(384,500,25,34,680,0);
+  p{
+    @include section-text(Open Sans,$white,18,400,30,left,0,0);
+  }
+  @include breakpoint($min-width){
+    p{
+      font-size:13px;
+    }
+    
+  }
+
+}
+
+.reading-area{
+  @include col-background-image(59.4,left,"video.png",528,0);
+  width: 950px;
+  margin-top:461px;
+  img{
+    padding-top:205px;
+    padding-left:400px;
+  }
+  @include breakpoint($min-width){
+    @include span(12);
+    margin-top:0px;
+    height:200px;
+    background-position: center;
+    img{
+      @include span(4);
+      padding-left:60px;
+      padding-top:50px;
+    }
+  }
+}
+
+.reading-info{
+  @include custom_col(59.4);
+  p{
+    @include section-text(Raleway,$black,35,400,39,left,50,45);
+  }
+  @include breakpoint($min-width){
+    @include span(12);
+    p{
+      @include section-text(Raleway,$black,25,400,30,left,50,45) ;
+    }
+  }
+}
+
+.readingp-container{
+  @include box-paragraph-paddings(960,225,18,55,0,0);
+  p{
+    @include section-text(Open Sans,$black,18,400,30,left,0,0) ;
+  }
+  @include breakpoint($min-width){
+    @include span(12);
+    p{
+      @include section-text(Open Sans,$black,12,400,30,left,0,0) ;
+    }
+  }
+}
+
+.section-icons{
+  margin-top:576px;
+  @include breakpoint($min-width){
+     @include span(12);
+  }
+}
+
+.container-icons{
+  @include color_col(100,$section-icons,318);
+  @include breakpoint($min-width){
+    @include span(12);
+    margin-top: 500px;
+    height:650px;
+  }
+}
+
+.miller-icon{
+  @include custom_col(33.33);
+  padding-top:80px;
+  padding-left:315px;
+  @include breakpoint($min-width){
+    @include span(12);
+    padding-left:150px;
+  }
+}
+
+.icon2{
+  @include custom_col(33.33);
+  @include breakpoint($min-width){
+    @include span(12);
+  }
+}
+
+.icon2-image{
+  @include alignGlyphicons(84,223);
+  @include breakpoint($min-width){
+    @include span(12);
+    padding-top:50px;
+    padding-left:160px;
+  }
+}
+.icon2-container{
+  @include iconContainer(200,45,15,157);
+  p{
+    @include section-text(Open Sans,$white,20,400,20,center,0,0);
+  }
+  @include breakpoint($min-width){
+    @include span(12);
+    width:300px;
+    padding-left:90px;
+  }
+}
+
+.icon3{
+  @include custom_col(33.33);
+  @include breakpoint($min-width){
+    @include span(12);
+  }
+}
+
+.icon3-image{
+ @include alignGlyphicons(84,138.5);
+ @include breakpoint($min-width){
+    @include span(12);
+    padding-top:50px;
+    padding-left:160px;
+  }
+}
+
+.icon3-container{
+  @include iconContainer(190,45,15,76);
+  p{
+    @include section-text(Open Sans,$white,20,400,20,center,0,0);
+  }
+  @include breakpoint($min-width){
+    @include span(12);
+    width:300px;
+    padding-left:90px;
+  }
+}
+
+footer{
+  background-color:#323339;
+  width: 1600px;
+  height: 462px;
+  @include breakpoint($min-width){
+    @include span(12);
+    height: 500px;
+  }
+}
+
+.footer-section1{
+  @include custom_col(67);
+  @include breakpoint($min-width){
+    @include span(12);
+  }
+}
+
+.popular-links{
+ @include col-icons-connect(16.66,left,75,204);
+ h1{
+   @include section-text(Montserrat,$red-racc,12,400,26,left,0,0);
+ }
+ p{
+   @include section-text(Montserrat,$white,12,400,26,left,10,0);
+ }
+ @include a-putcolor($white);
+ @include breakpoint($min-width){
+   display:none;
+  }
+}
+
+.contact-col{
+  @include col-icons-connect(16.66,left,75,61);
+  h1{
+    @include section-text(Montserrat,$red-racc,12,400,26,left,0,0);
+  }
+  p{
+    @include section-text(Montserrat,$white,12,400,26,left,10,0);
+  }
+  @include a-putcolor($white);
+ @include breakpoint($min-width){
+   display:none;
+  }
+}
+
+.polices-col{
+  @include col-icons-connect(16.66,left,75,20);
+  padding-left:19px;
+  h1{
+    @include section-text(Montserrat,$red-racc,12,400,26,left,0,0);
+  }
+  p{
+    @include section-text(Montserrat,$white,12,400,26,left,10,0);
+  }
+  @include a-putcolor($white);
+  @include breakpoint($min-width){
+   display:none;
+  }
+}
+.login-col{
+  @include col-icons-connect(16.66,left,75,35);
+  padding-left:10px;
+  h1{
+    @include section-text(Montserrat,$red-racc,12,400,26,left,0,0);
+  }
+  p{
+    @include section-text(Montserrat,$white,12,400,26,left,10,0);
+  }
+  @include a-putcolor($white);
+  @include breakpoint($min-width){
+   display:none;
+  }
+}
+
+.social-networking{
+  width:73%;
+  border-top: 1px solid white;
+  margin-top:275.5px;
+  margin-left:207px;
+  @include breakpoint($min-width){
+   display:none;
+  }
+}
+
+.rowSocial{
+  @include row(780);
+  @include breakpoint($min-width){
+    @include span(12);
+  }
+}
+
+.facebook-col{
+  @include col-icons-connect(8.33,left,60,145);
+  padding-left:41px;
+  @include breakpoint($min-width){
+    @include span(12);
+    padding-left:0px;
+  }
+}
+
+.twitter-col{
+  @include col-icons-connect(8.33,left,65,48);
+}
+
+.youtube-col{
+  @include col-icons-connect(8.33,left,61,10);
+}
+
+.link-col{
+  @include col-icons-connect(8.33,left,65,18);
+}
+
+.snap-col{
+  @include col-icons-connect(8.33,left,60,25);
+}
+
+.insta-col{
+  @include col-icons-connect(8.33,left,63,40);
+}
+
+.footer-section2{
+  @include custom_col(33);
+  @include breakpoint($min-width){
+    @include span(12);
+  }
+}
+
+.logo2{
+  margin-top:78px;
+  margin-left:38px;
+}
+
+.copyright-col
+{
+p{
+    @include section-text(Raleway,$copyright-text,12,500,23,left,50,33);
+  }
+  @include breakpoint($min-width){
+    @include span(12);
+  }
+}

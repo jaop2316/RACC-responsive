@@ -1,0 +1,208 @@
+@mixin absolute-text($wid,$top,$lef){
+  position:absolute;
+  width:#{$wid+"px"};
+  top:#{$top+"px"};
+  left:#{$lef+"px"};
+}
+
+@mixin apply-box($wid,$heigh,$back,$paddTop,$margTop,$margLeft){
+  width:#{$wid+"px"};
+  height:#{$heigh+"px"};
+  background-color:#{$back};
+  padding-top:#{$paddTop+"px"};
+  margin-top:#{$margTop+"px"};
+  margin-left:#{$margLeft+"px"};
+  &:hover{
+    background-color:$red-racc;
+  }
+  a{
+    text-decoration:none;
+    &:hover{
+      text-decoration: underline;
+      color:$white;
+    }
+  }
+  p{
+    color:#fff;
+    font-family: 'Raleway';
+    font-size:35px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 39px;
+  }
+}
+
+
+@mixin apply-box2($wid,$heigh,$back,$paddTop)
+{
+  width:#{$wid+"px"};
+  height:#{$heigh+"px"};;
+  background-color:$back;
+  padding-top:#{$paddTop+"px"};
+  &:hover{
+    background-color:#f23522;
+  }
+  a{
+    text-decoration:none;
+    &:hover{
+      text-decoration: underline;
+      color:white;
+    }
+  }
+  p{
+    color:#fff;
+    font-family: 'Raleway';
+    font-size:35px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 39px;
+  }
+}
+
+@mixin row($width){
+  width:#{$width+"px"};
+  &::after{
+    content: "";
+    clear: both;
+    display: table;
+   }
+}
+
+@mixin col($width){
+  width:#{$width+"%"};
+  float: left;
+  padding: 0px;
+}
+
+@mixin custom_col($width){
+  width:#{$width+"%"};
+  float: left;
+}
+
+@mixin custom-float($width,$float){
+  width:#{$width+"%"};
+  float:#{$float};
+}
+
+
+@mixin color_col($width,$backcolor,$height){
+  width:#{$width+"%"};
+  float: left;
+  background-color:#{$backcolor};
+  height:#{$height+"px"};
+}
+
+@mixin options-apply($paddTop,$paddLef,$width){
+  padding-top:#{$paddTop+"px"};
+  padding-left:#{$paddLef+"px"};
+  width:#{$width+"px"};
+  p{
+    font-family: 'Raleway';
+    color:  #394d69;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 39px;
+    text-align: left;
+  }
+}
+
+@mixin section-text($font,$color,$fsize,$fweight,$lheight,$align,
+$paddTop,$paddLef){
+  font-family:$font;
+  color:#{$color};
+  font-size:#{$fsize+"px"};
+  font-weight:#{$fweight+"px"};
+  line-height:#{$lheight+"px"};
+  text-align:#{$align};
+  padding-top:#{$paddTop+"px"};
+  padding-left:#{$paddLef+"px"};
+}
+
+@mixin col-background-image($width,$float,$backImage,$height
+,$margLeft){
+  width:#{$width+"%"};
+  float:#{$float};
+  background-image:url("img/#{$backImage}");
+  height:#{$height+"px"};
+  margin-left:#{$margLeft+"px"};
+}
+
+@mixin col-icons-connect($width,$float,$margTop,$margLeft){
+  width:#{$width+"%"};
+  float:#{$float};
+  margin-top:#{$margTop+"px"};
+  margin-left:#{$margLeft+"px"};
+}
+
+@mixin a-hover-putcolor($color){
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+      color:#{$color};
+    }
+  }
+}
+
+@mixin a-putcolor($color){
+  a{
+    text-decoration: none;
+    color:#{$color};
+    &:hover{
+      text-decoration: underline;
+      color:#{$color};
+    }
+  }
+}
+
+@mixin box-paragraph($width,$height,$margLeft,$margTop){
+  width:#{$width+"px"};
+  height:#{$height+"px"};
+  margin-left:#{$margLeft+"px"};
+  margin-top:#{$margTop+"px"};
+}
+
+@mixin box-paragraph-paddings($width,$height,$paddTop,$paddLef,
+$paddBot,$paddRight){
+  width:#{$width+"px"};
+  height:#{$height+"px"};
+  padding-top:#{$paddTop+"px"};
+  padding-left:#{$paddLef+"px"};
+  padding-bottom:#{$paddBot+"px"};
+}
+@mixin inputs($borderR,$backColor,$width,$height,$font,$color,
+$fsize,$paddLef,$paddTop){
+  border-radius:#{$borderR+"px"};
+  background-color:#{$backColor};
+  width:#{$width+"px"};
+  height:#{$height+"px"};
+  font-family:#{$font};
+  color:#{$color};
+  font-size:#{$fsize+"px"};
+  padding-left:#{$paddLef+"px"};
+  padding-top:#{$paddTop+"px"};
+}
+
+ @mixin buttons($borderR,$borderSty,$borderWid,$borderColor,
+$backColor,$width,$height){
+  border-radius: #{$borderR+"px"};
+	border-style: #{$borderSty};
+	border-width: #{$borderWid+"px"};
+	border-color: #{$borderColor};
+	background-color:#{$backColor};
+	width:#{$width+"px"};
+	height:#{$height+"px"};
+}
+
+@mixin iconContainer($width,$height,$margTop,$margLeft)
+{
+  width:#{$width+"px"};
+  height:#{$height+"px"};
+  margin-top:#{$margTop+"px"};
+  margin-left:#{$margLeft+"px"};
+}
+
+@mixin alignGlyphicons($paddTop,$paddLef){
+  padding-top:#{$paddTop+"px"};
+  padding-left:#{$paddLef+"px"};
+}
