@@ -15,6 +15,7 @@ Breakpoint.
 Uso
 
 1.- Instalación de Ruby , instrucciones de instalación http://www.ruby-lang.org/en/downloads/.
+
 2.- Instalar SASS. 
  
 a) $ gem install sass
@@ -36,4 +37,5 @@ a) $ gem install breakpoint
 6.- Compilar los archivos usando los siguientes comandos :
 
 a) $ cd /path/to/project
+
 b) compass watch
